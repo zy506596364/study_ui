@@ -38,6 +38,9 @@ class QTableWidgetDemo(QWidget):
         # 隐藏列表头
         self._table_widget.verticalHeader().setVisible(False)
 
+        # 隐藏表格线
+        self._table_widget.setShowGrid(False)
+
         self._layout.addWidget(self._table_widget)
         self.setLayout(self._layout)
 
