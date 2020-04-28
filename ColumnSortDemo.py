@@ -2,11 +2,11 @@
 # author:yi.zhang
 """
 按列排序
-
 1. 按哪一列排序
 2. 排序类型：升序或者降序
-
 sortItem(columnIndex, orderType)
+
+单元格内文字对齐方式
 """
 
 
@@ -41,6 +41,17 @@ class ColumnSortDemo(QWidget):
         self._table_widget.setItem(2, 0, QTableWidgetItem("小王"))
         self._table_widget.setItem(2, 1, QTableWidgetItem("20"))
         self._table_widget.setItem(2, 2, QTableWidgetItem("185"))
+        # 设置单元格内容的对齐方式
+        item_name = QTableWidgetItem("王五")
+        item_name.setTextAlignment(Qt.AlignBottom)
+        self._table_widget.setItem(3, 0, item_name)
+        item_age = QTableWidgetItem("20")
+        item_age.setTextAlignment(Qt.AlignHCenter)
+        self._table_widget.setItem(3, 1, item_age)
+
+        item_hight = QTableWidgetItem("166")
+        item_hight.setTextAlignment(Qt.AlignRight | Qt.AlignBottom)
+        self._table_widget.setItem(3, 2, item_hight)
 
         _layout.addWidget(self._table_widget)
 
